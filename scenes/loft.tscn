@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://cayoeo40a56ni"]
+[gd_scene load_steps=8 format=4 uid="uid://cayoeo40a56ni"]
 
+[ext_resource type="Script" uid="uid://d1ed5c1svwcw7" path="res://scenes/loft.gd" id="1_bl5wb"]
 [ext_resource type="PackedScene" uid="uid://bhq365j4mtixl" path="res://scenes/player.tscn" id="1_sxqpx"]
 [ext_resource type="Texture2D" uid="uid://7tu6olifoyql" path="res://assets/sprites/loft.png" id="2_v6fjk"]
+[ext_resource type="PackedScene" uid="uid://b3150h4b3sca0" path="res://components/interactable_area.tscn" id="3_d4fo0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d4fo0"]
 texture = ExtResource("2_v6fjk")
@@ -534,6 +536,7 @@ sources/0 = SubResource("TileSetAtlasSource_d4fo0")
 size = Vector2(16, 16)
 
 [node name="Loft" type="Node2D"]
+script = ExtResource("1_bl5wb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(52, -3)
@@ -551,3 +554,14 @@ position = Vector2(73, -8)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="entrance"]
 position = Vector2(80, 88)
 shape = SubResource("RectangleShape2D_v6fjk")
+
+[node name="Interactions" type="Node" parent="."]
+
+[node name="tv" parent="Interactions" instance=ExtResource("3_d4fo0")]
+position = Vector2(120, -16)
+
+[node name="fridge" parent="Interactions" instance=ExtResource("3_d4fo0")]
+position = Vector2(24, -22)
+
+[node name="sliding_glass" parent="Interactions" instance=ExtResource("3_d4fo0")]
+position = Vector2(80, -30)
