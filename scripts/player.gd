@@ -8,7 +8,7 @@ var pause = false
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
 	
-func player_movement(delta):
+func player_movement(_delta):
 	if pause:
 		return
 	var anim = $AnimatedSprite2D
